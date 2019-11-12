@@ -45,7 +45,7 @@ def decodeMessage(s, msgType):
             raise BufferError('Value size is not four bytes required for Numeric Type')
         value = struct.unpack_from('<f', s, 9 + mailSize)[0]
     else:
-        valueBytes = struct.unpack_from(‘ (payloadSize + 2):
+        valueBytes = struct.unpack_from(â€˜ (payloadSize + 2):
 	remnant = s[(payloadSize) + 2:]
         
     return (mail, value, remnant)
@@ -81,7 +81,7 @@ if __name__ == "__main__":
     #-----Sending a message------
     #s is the message we want to send.  The encodeMessage sets up the
     #correct payload, sets up the Message Title, stuffs the bytes correctly, etc.
-    s = encodeMessage(MessageType.Text, 'abc', 'Can you Hear Me?')
+    s = encodeMessage(MessageType.Text, 'IoT A2 Recv', 'Can you Hear Me?')
     #this next print is optional.  It just shows the full payload on the display.
     print('Sending the following message\n')
     print(printMessage(s))
